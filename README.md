@@ -1,71 +1,46 @@
-# 📈 Linear Regression Practical Implementation
+# Linear Regression Practical Implementation
 
-This repository contains a hands-on implementation of **Linear Regression** using Python and `scikit-learn`. The goal is to predict salaries based on years of experience from a real-world dataset. The project includes data preprocessing, model training, evaluation, and visualization of results.
+This project demonstrates a practical implementation of **Linear Regression** using the California Housing dataset from scikit-learn. The goal is to predict housing prices based on various features through a supervised machine learning approach.
 
-## 👩‍💻 Author
-**Sidra Saqlain**  
-Bachelor of Science in Data Science  
-Sir Syed University of Engineering and Technology (SSUET), Karachi
+## Dataset
 
----
+- The dataset used is the **California Housing dataset**, which includes features like median income, house age, average rooms, population, and more.
+- Data is loaded using `fetch_california_housing` from scikit-learn and converted into a pandas DataFrame for easier manipulation.
 
-## 📁 Dataset Used
-- **File**: `Salary_Data.csv`  
-- **Features**:
-  - `YearsExperience`: Independent variable
-  - `Salary`: Dependent variable
+## Workflow
 
----
+1. **Data Preparation**  
+   - Features (`X`) and target (`y`) variables are extracted from the dataset.
+   - The dataset is split into training and testing sets (70% train, 30% test).
 
-## 📌 Workflow
+2. **Feature Scaling**  
+   - Features are standardized using `StandardScaler` to improve model performance.
 
-1. **Importing Required Libraries**  
-2. **Reading and Exploring the Dataset**  
-3. **Checking for Null Values & Correlation**  
-4. **Feature Scaling using StandardScaler**  
-5. **Splitting Dataset into Training and Testing Sets**  
-6. **Model Training using Linear Regression**  
-7. **Model Evaluation:**
-   - Mean Squared Error (MSE)
-   - R² Score  
-8. **Visualization:**
-   - Actual vs Predicted Salaries
-   - Residuals Distribution
+3. **Model Training**  
+   - A Linear Regression model is trained on the scaled training data.
 
----
+4. **Model Evaluation**  
+   - Cross-validation with 10 folds is performed to evaluate Mean Squared Error (MSE).
+   - Predictions are made on the test set.
+   - Residuals are visualized using a KDE plot.
+   - The model’s performance is assessed using the R² score.
 
-## 🧪 Model Performance
+## Usage
 
-- **Mean Squared Error (MSE)**: `37784662.47`
-- **R² Score**: `0.9414`
+- Clone the repository.
+- Run the Jupyter notebook or Python script to execute the workflow.
+- Modify and extend the project by experimenting with feature engineering or different regression models.
 
-📊 **Interpretation**: The model explains over 94% of the variance in the salary data, indicating a strong linear relationship between experience and salary.
+## Dependencies
 
----
+- Python 3.x
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- scikit-learn
 
-## 📉 Visualizations
-
-- 📍 Scatter Plot (Actual vs Predicted)
-- 📍 Residual Distribution using Seaborn KDE
-
----
-
-## 🔧 Technologies Used
-
-- Python 3
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-
----
-
-## 📦 How to Run
+You can install the dependencies using:
 
 ```bash
-# Install dependencies
-pip install pandas numpy matplotlib seaborn scikit-learn
-
-# Run the Jupyter notebook
-jupyter notebook
+pip install numpy pandas matplotlib seaborn scikit-learn
